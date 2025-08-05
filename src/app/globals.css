@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 hover:from-primary-600 hover:to-primary-700 hover:-translate-y-1 hover:shadow-primary focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-primary-600 px-8 py-4 border-2 border-primary-500 rounded-xl font-semibold transition-all duration-200 hover:bg-primary-500 hover:text-white hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 hover:from-accent-600 hover:to-accent-700 hover:-translate-y-1 hover:shadow-accent focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+  
+  .feature-card {
+    @apply bg-white rounded-2xl p-8 shadow-lg border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary-200;
+  }
+  
+  .pricing-card {
+    @apply bg-white rounded-2xl p-8 border-2 border-gray-200 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .pricing-card.featured {
+    @apply border-primary-500 shadow-primary transform scale-105;
+  }
+  
+  .text-display {
+    @apply font-display;
+  }
+  
+  .text-h1 {
+    @apply font-display;
+  }
+  
+  .text-h2 {
+    @apply font-display;
+  }
+  
+  .text-h3 {
+    @apply font-semibold;
+  }
+  
+  .text-body-lg {
+    @apply text-lg leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply text-xs font-medium uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-mesh {
+    background: linear-gradient(135deg, theme('colors.primary.50') 0%, white 50%, theme('colors.accent.50') 100%);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+  }
+  
+  .container-section {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
